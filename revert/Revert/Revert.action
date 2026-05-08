@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionCollection version="2" name="Menu">
+    <Actions category="File">
+        <text>File</text>
+
+        <Action name="tomjk_revert">
+        <icon>edit-delete</icon>
+        <text>TomJK Revert</text>
+        <whatsThis></whatsThis>
+        <toolTip>Revert image</toolTip>
+        <iconText>Revert</iconText>
+        <activationFlags>0</activationFlags>
+        <activationConditions>0</activationConditions>
+        <shortcut></shortcut>
+        <isCheckable>false</isCheckable>
+        <statusTip></statusTip>
+        </Action>
+    </Actions>
+</ActionCollection>

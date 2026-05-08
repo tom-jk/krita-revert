@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=Revert
+X-Python-2-Compatible=false
+X-Krita-Manual=Manual.html
+Name=Revert
+Comment=Revert Krita file
+Name[en_GB]=Revert

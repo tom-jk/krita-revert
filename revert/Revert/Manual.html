@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>Quick Export Plugin Manual</title>
+<style>
+    * {
+        font-family: sans-serif;
+        margin-top: 1.25em;
+        margin-bottom: 1.25em;
+        //line-height: 150%;
+    }
+    tt {
+        font-family: monospace;
+        font-size: 0.9rem;
+    }
+    ul {
+        margin-top: 0.5em;
+        margin-bottom:0.5em;
+    }
+    li {
+        margin-top: 0.5em;
+        margin-bottom:0.5em;
+    }
+    dl {
+        margin-left: 2em;
+    }
+    dt {
+        font-weight: bold;
+    }
+    dd {
+        margin-left: 0em;
+    }
+    dl > dd > dl > dt {
+        margin-bottom: 0.75em;
+    }
+    dl > dd > dl > dd {
+        margin-top: 0em;
+    }
+    a {
+        text-decoration: none;
+    }
+    .back-to-top {
+        font-size: 0.75em;
+    }
+</style>
+</head>
+<body>
+<h1 id="title">Revert</h1>
+<p>
+    The Revert Plugin lets you reload an image from disk without losing 
+    your views.
+</p>
+    
+</ul>
+<h2 id="overview">Overview <a class="back-to-top" href="#contents">↥</a></h2>
+<p>
+    Reverting an image in Krita is currently something you must do 
+    manually: close the existing image, then re-open it. This becomes 
+    tedious if you have multiple views, perhaps in multiple windows, 
+    each carefully positioned and configured with canvas mirroring, 
+    wraparound, rotation and so on, that you then have to manually 
+    restore.
+</p><p>
+    This plugin takes a snapshot of the views on your current image, 
+    closes it, reopens it, then recreates the old views.
+</p><p>
+    You can find the Revert action in the File menu. You can also add a 
+    button to your toolbar from Settings → Configure Toolbars, and you 
+    can assign a shortcut from Settings → Configure Krita → Keyboard 
+    Shortcuts → Menu → File.
+</p>
+<h2 id="dialog">Dialog</h2>
+<p>
+    A dialog appears when you press revert to confirm you wish to 
+    reload your file. It presents the option to reuse current views 
+    (the default behaviour described above) or to discard them 
+    (equivalent to closing and reopening as normal - the new image will 
+    appear in a single view in the active window in the default 
+    position).
+</p>
+</body>
+</html>
