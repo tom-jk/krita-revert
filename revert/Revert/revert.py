@@ -143,6 +143,7 @@ class RevertExtension(Extension):
 
     def _on_revert_triggered(self):
         doc = app.activeDocument()
+        win = app.activeWindow()
         
         if not doc:
             logger.info("No document to revert.")
@@ -157,14 +158,14 @@ class RevertExtension(Extension):
                 "Krita",
                 f"Reload <b>'{Path(doc.fileName()).name}'</b> from disk?<br/><br/>"
                 "Any unsaved changes will be lost.",
-                parent = Application.activeWindow().qwindow()
+                parent = win.qwindow()
         )
         btnCancel = msgBox.addButton(QMessageBox.Cancel)
         btnRevert = msgBox.addButton("Revert", QMessageBox.DestructiveRole)
         btnDoInPlace = QCheckBox("Reuse current views", msgBox)
         btnDoInPlace.setChecked(True)
         msgBox.setCheckBox(btnDoInPlace)
-        btnRevert.setIcon(Application.icon('warning'))
+        btnRevert.setIcon(app.icon('warning'))
         msgBox.setDefaultButton(QMessageBox.Cancel)
         msgBox.exec()
         
@@ -180,6 +181,14 @@ class RevertExtension(Extension):
 
         else:
             logger.info("Revert (open in single view)")
+            filename = doc.fileName()
+            app.setBatchmode(True)
+            doc.setModified(False)
+            doc.close()
+            doc.waitForDone()
+            doc = app.openDocument(filename)
+            view = win.addView(doc)
+            app.setBatchmode(False)
     
     def _on_reverter_finished(self):
         logger.info("Revert completed.")
