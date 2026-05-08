@@ -7,7 +7,9 @@ _feedback welcome._
 
 ##### Requirements
 Compatible: Krita 5.3
+
 Not tested: Krita 5.2 and earlier
+
 Not compatible: Krita 6
 
 Tested on Linux, but expected to work on Windows and Mac.
