@@ -100,7 +100,7 @@ class RevertExtension(Extension):
         move_partial.func(*move_partial.args)
         
         theme_menu_action = next(
-            (a for a in app.actions() if a.objectName() == "theme_menu"), None
+            (a for a in qwindow.actions() if a.objectName() == "theme_menu"), None
         )
         
         for theme_action in theme_menu_action.menu().actions():
