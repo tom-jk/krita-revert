@@ -17,13 +17,16 @@ class CustomFormatter(logging.Formatter):
 logLevelStream = logging.DEBUG#WARNING
 
 logger = logging.getLogger("tomjk_revert")
-logger.propagate = False
-logger.setLevel(logLevelStream)
-logHandlerS = logging.StreamHandler()
-logHandlerS.setFormatter(CustomFormatter('Revert Plugin: %(levelname)s: %(message)s'))
-logHandlerS.setLevel(logLevelStream)
-logger.addHandler(logHandlerS)
 
-logger.info("Begin.")
+if not logger.hasHandlers():
+    # first activation.
+    logger.propagate = False
+    logger.setLevel(logLevelStream)
+    logHandlerS = logging.StreamHandler()
+    logHandlerS.setFormatter(CustomFormatter('Revert Plugin: %(levelname)s: %(message)s'))
+    logHandlerS.setLevel(logLevelStream)
+    logger.addHandler(logHandlerS)
 
-from .revert import RevertExtension
+    logger.info("Begin.")
+
+    from .revert import RevertExtension

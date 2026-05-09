@@ -18,12 +18,10 @@ known_windows = []
 
 class RevertExtension(Extension):
     themeChanged = pyqtSignal()
-
+    
     def __init__(self, parent):
         super().__init__(parent)
         logger.info("extension init.")
-        
-        #set_extension(self)
 
     def setup(self):
         logger.info("extension setup.")
@@ -195,4 +193,7 @@ class RevertExtension(Extension):
         del self.reverter
 
 # And add the extension to Krita's list of extensions:
-app.addExtension(RevertExtension(app))
+if len(Application.windows()) > 0:
+    logger.warning("Activated mid-Krita session. Please restart Krita.")
+else:
+    app.addExtension(RevertExtension(app))
