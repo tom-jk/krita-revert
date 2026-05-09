@@ -23,7 +23,9 @@ Install in Krita following [these instructions](https://docs.krita.org/en/user_m
 - for reasons, the reverted document is closed after the new one is open, so both briefly occupy memory.
 - the views will move/flicker during revert.
 
-#### History
+#### Credits
+Revert icon from KDE Breeze theme.
 
-##### v1.0.0
-Initial release
+#### History
+- [v1.0.1](https://github.com/tom-jk/krita-revert/releases/tag/v1.0.1) (Latest)
+- v1.0.0

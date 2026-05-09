@@ -14,7 +14,7 @@ class CustomFormatter(logging.Formatter):
         result = super().format(record)
         return result
 
-logLevelStream = logging.DEBUG#WARNING
+logLevelStream = logging.WARNING
 
 logger = logging.getLogger("tomjk_revert")
 
